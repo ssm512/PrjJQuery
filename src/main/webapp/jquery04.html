@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery04-CDN</title>
+<!-- jquery CDN -->
+<script src='https://code.jquery.com/jquery-4.0.0.min.js'></script>
+<script>
+	$( function () {
+		$('#name').val('Hello jquery!!!')
+		
+		let name2El = document.getElemenyById('name2');
+		name2El.val = 'Hello 제이쿼리';
+		
+		let name3El = $('#name3') // 배열이라고 생각하면 됨, js에 찾은걸 다른데로 옮길수 이씁
+		name3El[0].val = 'Hello j제이쿼리'; // 안됨
+	})
+</script>
+</head>
+<body>
+  <form id="frm">
+    <input type="text" id="name" />
+    <input type="text" id="name2" />
+    <input type="text" id="name3" />
+    <input type="password"  />
+    <input type="radio"  />
+    <input type="checkbox"  />
+    <input type="file"  />
+  
+  </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+/* 	h1, p { color : orange; } */
+</style>
+<title>Insert title here</title>
+<script src='/js/jquery-4.0.0.min.js'></script>
+<script>
+	// jquery : $('css선택자')
+	// jquery에서 화면이 다 그려진 후 (DOM content loaded)
+	$(document).ready(function () { // window.onload 와 비슷, document.dom content loaded
+		// $('*').css('color', 'orange') // document.queryselectorall을 의미함 $('*'), .css('color', 'orange') 
+		//$('h1, p').css('color', 'red')  
+		$('h1').css('color', 'red')  
+	} );
+</script>
+</head>
+<body>
+	<h1>Hello</h1>
+	<p>Lorem ipsum</p>
+	<h1>title</h1>
+	<p>Lorem ipsum</p>
+	<p>Lorem ipsum</p>
+</body>
+</html>
