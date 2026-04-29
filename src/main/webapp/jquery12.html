@@ -9,8 +9,27 @@
 <script src="https://code.jquery.com/jquery.min.js"></script>
 <script>
 	var n = 0
+	//window : browser 객체
 	$(function () {
-		$()
+		$(window).scroll( function () {
+			var	scrollHeight 		= $(window).scrollTop() + $(window).height()
+			var	documentHeight 	= $(document).height();
+			if ( documentHeight - 200 >= scrollHeight ) {
+				// 추가할 내용을 넣는다
+				for ( var i = 0; i<20; i++) {
+					$('body').append('<h1>Infinity Scroll '+ n +'</h1>')
+					n++
+				} // for end
+				
+			} // if end
+		} )
+		
+		//초기화면 설정
+		for ( var i = 0; i<20; i++) {
+					$('body').append('<h1>Infinity Scroll '+ n +'</h1>')
+					n++
+		} // for end
+		
 	})
 </script>
 </head>
