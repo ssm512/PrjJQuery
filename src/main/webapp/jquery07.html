@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script>
+	$(function () {
+		/*
+		$('h1').filter( ':even' ).css({
+			'background-color' : 'black', // 객체의 property 이고, -color를 쓰기위해서 ''를 붙임, 이와 같이 중간에 -가 들어가 있으면
+			'color'						 : 'white' // 속성이자 변수처럼 사용
+		})
+		*/
+		
+		$('h1').filter( function (index) {
+			return index % 3 == 0
+		}).css({
+			background 			 : 'black', // backgroundColor : 'black' 해도 똑같이 작동함, 이런거 많음
+			color						 : 'white'
+		})
+		
+		$('h1').eq(0).css('color', 'cyan') // 첫번째 줄, 속성으로 사용할때는 ' ' 가 필수 임
+		$('h1').eq(-1).css('color', 'cyan') // 마지막 줄
+	})
+</script>
+</head>
+<body>
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+    <h1>Header-3</h1>
+    <h1>Header-4</h1>
+    <h1>Header-5</h1>
+    <h1>Header-6</h1>
+    <h1>Header-7</h1>
+</body>
+</html>

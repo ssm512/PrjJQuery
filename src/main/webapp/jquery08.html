@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script>
+		let array = [  // 배열 [] 안에 객체 {}를 넣음
+			{ name : 'Naver', 		link : 'https://www.naver.com' 			},
+			{ name : 'Nate', 			link : 'https://www.nate.com' 			},
+			{ name : 'Daum', 			link : 'https://www.daum.net' 			},
+			{ name : 'Google', 		link : 'https://www.google.com' 		},
+			{ name : 'Microsoft', link : 'https://www.microsoft.com' 	}
+		]
+	$(function () {
+		let tag = ''
+		$.each(array, function(index, item) { // array 배열을 대상으로 함수를 조작하는 거임 // $.each는 배열의 형식일떄 사용함
+			tag += '<a href="'+ item.link + '">'
+			tag += '<h2>' + item.name + '</h2>'
+			tag += '</a>'
+		})
+		
+		tag += '<select name="link">'
+		tag += '<option>선택</option>'
+		$.each(array, function (index, item) {
+			tag += '<option value="' + item.link + '">'
+			tag += item.name
+			tag += '</option>'
+		} )
+		tag += '</select>'
+		
+		$('body').append( tag )
+		
+		$('select').on('change', function(index, item) {
+			console.log( $('select>option:selected') )
+			location.href = $('select>option:selected').val()
+		})
+		
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

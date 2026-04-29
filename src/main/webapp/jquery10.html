@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		width: 100px; height:100px;
+		background-color: orange;
+		position : relative;
+	}
+</style>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script>
+	// 플러그인 없이 사용할 경우 linear, swing만 사용가능함
+	let	eases = [
+		'easeInQuad', 'easeOutQuad', 'easeInOutQuad',
+		'easeInCubic', 'easeOutQuart', 'easeInOutQuint',
+		'easeInExpo', 'easeOutCirc', 'easeOutBounce', 
+		'easeInBack', 'easeOutBack', 'easeInElastic',
+		'easeInBounce', 'linear', 'swing'
+	]
+	
+	$(function () {
+		let tag = '';
+		$.each(eases, function (index, opt) {
+			console.log(opt)
+			tag += `<option>${opt}</option>`
+		})
+		$('select').html(tag)			
+		
+		$('button').click(function () {
+			let easing = $('option:selected').html()
+			$('div')
+			.animate({
+				left : '400'
+			}, 2000, easing)
+			.animate({
+				left : '0'
+			}, 1000, easing)
+		})
+	})
+</script>
+</head>
+<body>
+   <select>
+   </select>
+   <button>MOVE</button>
+   <div></div>
+</body>
+</html>
